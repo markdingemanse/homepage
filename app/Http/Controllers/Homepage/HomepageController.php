@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Homepage;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\Homepage\SymphonicMetalCheckJob;
+use App\Jobs\Homepage\RssCheckJob;
 
 class HomepageController extends Controller
 {
@@ -12,7 +12,7 @@ class HomepageController extends Controller
     */
     public function launch()
     {
-        $this->dispatch((new SymphonicMetalCheckJob)->onQueue('homepage'));
+        $this->dispatch((new RssCheckJob)->onQueue('homepage'));
 
         return view('index');
     }

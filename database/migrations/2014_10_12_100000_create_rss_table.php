@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReditSymphonicmetalFeedCheckTable extends Migration
+class CreateRssTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateReditSymphonicmetalFeedCheckTable extends Migration
      */
     public function up()
     {
-        Schema::create('reddit_symphonicmetal', function (Blueprint $table) {
+        Schema::create('rss', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_post');
             $table->timestamps();

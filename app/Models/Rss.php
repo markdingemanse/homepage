@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Symphonic extends Model
+class Rss extends Model
 {
     use SoftDeletes;
     /**
@@ -17,7 +17,7 @@ class Symphonic extends Model
     /**
      * {@inheritdoc}
      */
-    protected $table = 'reddit_symphonicmetal';
+    protected $table = 'rss';
 
     /**
      * {@inheritdoc}

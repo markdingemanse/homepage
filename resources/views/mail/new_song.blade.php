@@ -1,4 +1,4 @@
-<a href="https://www.reddit.com/r/symphonicmetal/">
+<a href="https://www.reddit.com/{{$label}}">
     <img src="https://k61.kn3.net/taringa/1/4/8/9/3/9//lyserg07/8EE.gif" alt="" height="" width="" class="emailImage" />
 </a>
 
