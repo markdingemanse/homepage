@@ -6,7 +6,7 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
 /*
 * FeedEk jQuery RSS/ATOM Feed Plugin v3.0 with YQL API
 * http://jquery-plugins.net/FeedEk/FeedEk.html  https://github.com/enginkizil/FeedEk
-* Author : Engin KIZIL http://www.enginkizil.com   
+* Author : Engin KIZIL http://www.enginkizil.com
 */
 
 (function ($) {
@@ -21,10 +21,10 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
             DateFormat: "",
             DateFormatLang:"en"
         }, opt);
-        
+
         var id = $(this).attr("id"), i, s = "", dt;
         $("#" + id).empty();
-        if (def.FeedUrl == undefined) return;       
+        if (def.FeedUrl == undefined) return;
         $("#" + id).append('<img src="img/loader.gif" />');
 
         var YQLstr = 'SELECT channel.item FROM feednormalizer WHERE output="rss_2.0" AND url ="' + def.FeedUrl + '" LIMIT ' + def.MaxCount;
@@ -34,19 +34,22 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
             dataType: "json",
             success: function (data) {
                 $("#" + id).empty();
+                if (data.query.results === null) {
+                    data.query.results = [];
+                }
                 if (!(data.query.results.rss instanceof Array)) {
                     data.query.results.rss = [data.query.results.rss];
                 }
                 $.each(data.query.results.rss, function (e, itm) {
-					var link = "";
-					if (itm.channel.item.link.constructor === Array) {
-						link = itm.channel.item.link[0];
-					}
-					else {
-						link = itm.channel.item.link;
-					}
+                    var link = "";
+                    if (itm.channel.item.link.constructor === Array) {
+                        link = itm.channel.item.link[0];
+                    }
+                    else {
+                        link = itm.channel.item.link;
+                    }
                     s += '<li><div class="itemTitle"><a href="' + link + '" target="' + def.TitleLinkTarget + '" >' + itm.channel.item.title + '</a></div>';
-                    
+
                     if (def.ShowPubDate){
                         dt = new Date(itm.channel.item.pubDate);
                         s += '<div class="itemDate">';
@@ -55,7 +58,7 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
                                 moment.locale(def.DateFormatLang);
                                 s += moment(dt).format(def.DateFormat);
                             }
-                            catch (e){s += dt.toLocaleDateString();}                            
+                            catch (e){s += dt.toLocaleDateString();}
                         }
                         else {
                             s += dt.toLocaleDateString();
@@ -116,13 +119,6 @@ $(document.getElementById("nos")).FeedEk( {
 });
 $(document.getElementById("nu")).FeedEk( {
     FeedUrl : 'http://www.nu.nl/rss/Algemeen',
-    MaxCount : 40,
-    ShowDesc : false,
-    ShowPubDate : false,
-    TitleLinkTarget:'_self',
-});
-$(document.getElementById("reddit")).FeedEk( {
-    FeedUrl : 'https://www.reddit.com/r/symphonicmetal/',
     MaxCount : 40,
     ShowDesc : false,
     ShowPubDate : false,

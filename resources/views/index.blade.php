@@ -13,7 +13,6 @@
     </head>
 
     <body>
-        <div class="bg" id="bg"></div>
         <div id="toggleBlur">
             <p style="cursor: pointer;" onclick="toggleBlur();">Toggle blur</p>
         </div>
@@ -165,17 +164,15 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 randomFile = xhttp.responseText;
-                // console.log(document.querySelector('.bg').classList);
-                // document.querySelector('.bg').classList.add(randomFile);
+
                 var imgcss = "url('/img/" + randomFile + "')";
-                console.log(imgcss);
                 document.body.style.backgroundImage = imgcss;
 
                 var date = new Date();
                 var hour = date.getHours();
                 var bgpath = "/img/" + randomFile;
                 var image = document.createElement("img");
-                
+
                 image.id = "bgimg";
                 image.src = bgpath;
 
