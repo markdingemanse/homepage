@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 class image
 {
     protected $publicPath = "../public/img";
-        
+
     protected $blackList = [
         '.',
         '..',
@@ -15,38 +15,28 @@ class image
         'loader.gif',
         'mailgif.gif',
         'pomf.png',
+        'umbrella.png'
     ];
 
     function recursiveRadomSelection(Collection $files)
     {
         $random = $files->random();
 
-        if ($this->endsWith($random, '.jpg') | $this->endsWith($random, '.png')) {
-            return $random;
-        }
-
-        return $this->recursiveRadomSelection($files);
+        return ($this->endsWith($random, '.jpg') | $this->endsWith($random, '.png')) ? $random : $this->recursiveRadomSelection($files);
     }
 
     function endsWith($haystack, $needle)
     {
-        $length = strlen($needle);
-        if ($length == 0) {
-            return true;
-        }
-
-        return (substr($haystack, -$length) === $needle);
+        return (strlen($needle) === 0) ? true : (substr($haystack, -strlen($needle)) === $needle);
     }
 
     function blacklistFiles(Collection $files)
     {
         $blacklist = $this->getBlackList();
 
-        $files->filter(function ($file) use ($blacklist) {
+        return $files->filter(function ($file) use ($blacklist) {
             return !in_array($file, $blacklist);
         });
-
-        return $files;
     }
 
     function getBlackList()

@@ -3,6 +3,7 @@
     Homepage by Emily !66666666Ok
     pls (dont) steal. Iam sorry Emily i liked it alot :( <3 u.
 -->
+
 <html>
     <head>
         <title>Homepage</title>
@@ -12,7 +13,7 @@
         <link href="css/all.css" rel="stylesheet" type="text/css">
     </head>
 
-    <body>
+    <body style="background-size: cover">
         <div id="toggleBlur">
             <p style="cursor: pointer;" onclick="toggleBlur();">Toggle blur</p>
         </div>
@@ -199,68 +200,6 @@
         };
         xhttp.open("GET", url, true);
         xhttp.send();
-
-
-
-
-
-
-
-        //
-        //
-        // Http.open("GET", url);
-        // Http.send();
-        // Http.onreadystatechange=(e)=>{
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         randomFile = Http.responseText;
-        //         console.log(randomFile);
-        //         // Randomize background
-        //         var date = new Date();
-        //         var hour = date.getHours();
-        //         var bgpath = "img/" + randomFile;
-        //         // var bgpath = "img/";
-        //         // if ( hour > 6 && hour < 18 ) {
-        //         //     var bgd = [ 'bgd1', 'bgd2', 'bgd3', 'bgd4', 'bgd5', 'bgd6', 'bgd7', 'bgd8', 'bgd9', 'bgd10', 'bgd11', 'bgd12', 'bgd12' ];
-        //         //     var bgd = bgd[Math.floor(Math.random() * bgd.length)];
-        //         //     document.querySelector('.bg').classList.add(bgd);
-        //         //     bgpath += bgd;
-        //         // }
-        //         // else {
-        //         //     var bgn = [ 'bgn1', 'bgn2', 'bgn3', 'bgn4', 'bgn5', 'bgn6', 'bgn7', 'bgn8', 'bgn9', 'bgn10', 'bgn11', 'bgn12', 'bgn13', 'bgn14', 'bgn15' ];
-        //         //     var bgn = bgn[Math.floor(Math.random() * bgn.length)];
-        //         //     document.querySelector('.bg').classList.add(bgn);
-        //         //     bgpath += bgn;
-        //         // }
-        //         // bgpath += ".jpg";
-        //
-        //         var image = document.createElement("img");
-        //         image.id = "bgimg";
-        //         image.src = bgpath;
-        //
-        //         // Chrome color
-        //         var rgb;
-        //         image.onload = function() {
-        //                     rgb = getAverageRGB(image);
-        //                     var meta = document.createElement('meta');
-        //                     meta.name = "theme-color";
-        //                     meta.content = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
-        //                     document.getElementsByTagName('head')[0].appendChild(meta);
-        //         }
-        //
-        //         // Header title
-        //         if ( hour >= 3 && hour < 10 ) {
-        //             document.getElementById("titletext").innerHTML = "おはよう!";
-        //         }
-        //         if ( hour >= 10 && hour < 18 ) {
-        //             document.getElementById("titletext").innerHTML = "こんにちは!";
-        //         }
-        //         if ( hour >= 18 || hour < 3 ) {
-        //             document.getElementById("titletext").innerHTML = "こんばんは!";
-        //         }
-        //     }
-        // }
-
-
 
         </script>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>

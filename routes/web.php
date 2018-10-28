@@ -10,14 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-
-});
-
 Route::get('/', 'Homepage\HomepageController@launch')->name('homepage');
 
-Route::get('/randomfile', 'Homepage\HomepageController@getRandomFile')->name('getFile');
+Route::get('randomfile', 'Homepage\HomepageController@getRandomFile')->name('getFile');
 
 Route::get('uploadfile','Homepage\HomepageController@uploadfileview')->name('upload_background_view');
 

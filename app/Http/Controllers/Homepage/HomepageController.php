@@ -36,15 +36,15 @@ class HomepageController extends Controller
     /** Example of File Upload */
     public function uploadFile(Request $request){
         $request->validate([
-            'fileToUpload' => 'required|file',
+            'file' => 'required|file',
         ]);
 
-        $fileName = "bgn".time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        $fileName = "bgn".time().'.'.request()->file->getClientOriginalExtension();
 
-        $request->fileToUpload->storeAs('img', $fileName, 'img');
+        $request->file->storeAs('img', $fileName, 'img');
 
         return back()
-            ->with('success','You have successfully upload image.');
+            ->with('success','You have successfully uploaded this one.');
 
     }
 
