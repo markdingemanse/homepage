@@ -159,7 +159,7 @@
         <script src="js/all.js"></script>
         <script type="text/javascript">
 
-        const url='http://homepage.test/randomfile';
+        const url=window.location.origin + '/randomfile';
         var xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {
