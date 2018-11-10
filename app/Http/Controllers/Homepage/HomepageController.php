@@ -28,9 +28,14 @@ class HomepageController extends Controller
     }
 
     /** Return view to upload file */
-    public function uploadFileview()
+    public function uploadFileview(Request $request)
     {
-        return view('upload.file_upload');
+        $pw = env("UPLOAD_PW");
+        $submitted = (string) $request->input('waifu');
+
+        return ($submitted === $pw)
+            ? view('upload.file_upload')
+            : view('index');
     }
 
     /** Example of File Upload */
