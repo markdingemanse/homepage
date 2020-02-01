@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Logging extends Model
 {
-    protected $connection = 'mysql';
+    protected $connection = 'faptitan';
 
     /**
      * {@inheritdoc}

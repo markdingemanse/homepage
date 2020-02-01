@@ -12,7 +12,7 @@ class Rss extends Model
      * {@inheritdoc}
      */
 
-    protected $connection = 'mysql';
+    protected $connection = 'faptitan';
 
     /**
      * {@inheritdoc}
