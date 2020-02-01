@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Homepage;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Homepage\RssCheckJob;
+use App\Services\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use App\Services\Image;
+use Illuminate\Support\Facades\Cache;
 
 class HomepageController extends Controller
 {
@@ -33,24 +34,29 @@ class HomepageController extends Controller
         $pw = env("UPLOAD_PW");
         $submitted = (string) $request->input('waifu');
 
-        return ($submitted === $pw)
-            ? view('upload.file_upload')
-            : view('index');
+        return ($submitted === $pw)?
+            view('upload.file_upload'):
+            view('index');
     }
 
     /** Example of File Upload */
     public function uploadFile(Request $request){
-        $request->validate([
-            'file' => 'required|file',
-        ]);
+        $pw = env("UPLOAD_PW");
+        $submitted = (string) $request->input('waifu');
 
-        $fileName = "bgn".time().'.'.request()->file->getClientOriginalExtension();
+        if ($submitted === $pw) {
+            $request->validate([
+                'file' => 'required|file',
+            ]);
 
-        $request->file->storeAs('img', $fileName, 'img');
+            $fileName = "bgn".time().'.'.request()->file->getClientOriginalExtension();
 
-        return back()
-            ->with('success','You have successfully uploaded this one.');
+            $request->file->storeAs('img', $fileName, 'img');
 
+            return redirect()->route('upload_background_view',['waifu' => $submitted]);
+        }
+
+        return view('index');
     }
 
     public function getRandomFile()

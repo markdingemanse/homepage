@@ -82,6 +82,7 @@ h2 + P {
     @csrf
     <p class="file">
         <input type="file" class="form-control-file" name="file" id="file" aria-describedby="fileHelp">
+        <input type="hidden" name="waifu" value="{{env('UPLOAD_PW')}}">
         <label for="file">???</label>
     </p>
 </form>
