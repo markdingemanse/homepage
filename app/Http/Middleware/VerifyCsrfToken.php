@@ -13,6 +13,6 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         '/titan/log',
-        '/titan/heroines'
+        '/titan/heroine'
     ];
 }
