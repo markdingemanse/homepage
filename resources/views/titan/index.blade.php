@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-            <form action="/titan/log" method="POST">
+            <form action="/titan/log" method="post" enctype="multipart/form-data">
                 @csrf
               <div>
                   <div class="form-group">
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-              <form action="/titan/heroine" method="POST">
+              <form action="/titan/heroine" method="post" enctype="multipart/form-data">
                   @csrf
                   <div>
                       <div class="form-group">
