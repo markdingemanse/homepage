@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Heroine extends Model
 {
-    protected $connection = 'mysql';
+    protected $connection = 'faptitan';
 
     /**
      * {@inheritdoc}
