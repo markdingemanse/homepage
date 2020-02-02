@@ -22,6 +22,11 @@ class TitanController extends Controller
         $logs     = Logging::all();
         $heroines = Heroine::with('logs')->get();
 
+        $heroines = $heroines->each(function ($heroine) {
+            $heroine->current_level      = $heroine->logs->max('new_level');
+            $heroine->promotion_received = $heroine->logs->max('promotion_received');
+        });
+
         return ($submitted === $pw)
             ? view('titan.index')->with([
                 'logs' => $logs,

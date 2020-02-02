@@ -13,9 +13,7 @@
   <body>
 
     <h1> Submit Forms!</h1>
-
     <hr>
-
     <h3> Logs!</h3>
 
     <div class="container">
@@ -51,7 +49,6 @@
       <hr>
 
       <h3> Heroines!</h3>
-
 
       <div class="container">
         <div class="row">
@@ -100,26 +97,21 @@
 
       <div class="container">
         <div class="row">
-
             @foreach ($heroines as $heroine)
             <div class="col" style="padding: 20px">
                 <div class="card" style="width: 15rem; padding: 20px">
                   <img class="card-img-top" src={{ $heroine->link_to_picture }} alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{ $heroine->name }}</h5>
-                    <p class="card-text">{{ $heroine->name }} with id {{ $heroine->id }} Description: {{ $heroine->discription }} with type {{ $heroine->attack_type}}</p>
+                    <hr>
+                    <p class="card-text">with id <b>{{ $heroine->id }}</b> <br> Description: <b>{{ $heroine->discription }}</b> <br> with type <b>{{ $heroine->attack_type}}</b> <br>current level: <b>{{ $heroine->current_level}}</b> <br> last promotion received on: <b>{{$heroine->promotion_received}}</b></p>
                   </div>
                 </div>
             </div>
             @endforeach
 
-
         </div>
       </div>
-
-
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -29,6 +29,6 @@ class Heroine extends Model
 
     public function logs() : HasMany
     {
-        return $this->hasMany(Logging::class, 'id', 'heroine');
+        return $this->hasMany(Logging::class, 'heroine', 'id');
     }
 }
