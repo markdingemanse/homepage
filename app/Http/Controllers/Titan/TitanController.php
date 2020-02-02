@@ -43,7 +43,7 @@ class TitanController extends Controller
         $submitted = (string) $request->input('waifu');
 
         if ($submitted === $pw) {
-            $attributes = array_merge($request->only(['new_level', 'heroine']), ['promoted' => true, 'promotion_received' => $now]);
+            $attributes = array_merge($request->only(['new_level', 'heroine_id']), ['promoted' => true, 'promotion_received' => $now]);
 
             $encoded = json_encode($attributes);
             \Log::info("Creating log entry: $encoded");

@@ -15,10 +15,12 @@ class CreateLoggingTable extends Migration
     {
         Schema::create('logging', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('heroine');
+            $table->unsignedInteger('heroine_id');
             $table->boolean('promoted');
             $table->integer('new_level');
             $table->dateTime('promotion_received');
+
+            $table->foreign('heroine_id')->references('id')->on('heroines');
         });
     }
 

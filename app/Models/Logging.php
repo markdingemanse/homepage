@@ -21,7 +21,7 @@ class Logging extends Model
      * {@inheritdoc}
      */
     protected $fillable = [
-        'heroine',
+        'heroine_id',
         'promoted',
         'new_level',
         'promotion_received',
@@ -29,6 +29,6 @@ class Logging extends Model
 
     public function heroine() : BelongsTo
     {
-        return $this->belongsTo(Heroine::class, 'heroine', 'id');
+        return $this->belongsTo(Heroine::class, 'heroine_id', 'id');
     }
 }

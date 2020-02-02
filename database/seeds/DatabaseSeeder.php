@@ -45,49 +45,49 @@ class DatabaseSeeder extends Seeder
 
 
         Logging::create([
-            'heroine' => $heroine1->getKey(),
+            'heroine_id' => $heroine1->getKey(),
             'promoted' => true,
             'new_level' => 666,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine2->getKey(),
+            'heroine_id' => $heroine2->getKey(),
             'promoted' => true,
             'new_level' => 12,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine1->getKey(),
+            'heroine_id' => $heroine1->getKey(),
             'promoted' => true,
             'new_level' => 701,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine1->getKey(),
+            'heroine_id' => $heroine1->getKey(),
             'promoted' => true,
             'new_level' => 707,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine4->getKey(),
+            'heroine_id' => $heroine4->getKey(),
             'promoted' => true,
             'new_level' => 21,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine3->getKey(),
+            'heroine_id' => $heroine3->getKey(),
             'promoted' => true,
             'new_level' => 1,
             'promotion_received' => Carbon::now(),
         ]);
 
         Logging::create([
-            'heroine' => $heroine1->getKey(),
+            'heroine_id' => $heroine1->getKey(),
             'promoted' => true,
             'new_level' => 666,
             'promotion_received' => Carbon::now(),

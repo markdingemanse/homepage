@@ -24,7 +24,7 @@
               <div>
                   <div class="form-group">
                     <label for="heroineId">Select a heroine id</label>
-                    <select name="heroine" multiple class="form-control" id="heroineId" required>
+                    <select name="heroine_id" multiple class="form-control" id="heroineId" required>
                         @foreach ($heroines as $heroine)
                             <option value={{ $heroine->id }}>{{ $heroine->name }} with id {{ $heroine->id }}</option>
                         @endforeach
