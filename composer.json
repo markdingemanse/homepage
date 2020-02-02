@@ -7,9 +7,10 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
-        "willvincent/feeds": "1.1.*"
+        "willvincent/feeds": "dev-master",
+        "symfony/translation-contracts": "^1.1.6"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
