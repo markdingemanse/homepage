@@ -19,7 +19,7 @@ class HomepageController extends Controller
     }
 
     /**
-    * Handles the pre launch tasls
+    * Handles the pre launch tasks
     */
     public function launch()
     {
@@ -38,6 +38,7 @@ class HomepageController extends Controller
             view('upload.file_upload'):
             view('index');
     }
+
 
     /** Example of File Upload */
     public function uploadFile(Request $request){
