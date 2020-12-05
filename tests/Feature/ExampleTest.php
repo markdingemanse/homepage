@@ -20,17 +20,4 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
-
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testFpTitanIndex()
-    {
-        $pw = env("UPLOAD_PW");
-        $response = $this->get("/titan?waifu=$pw");
-
-        $response->assertStatus(200);
-    }
 }
