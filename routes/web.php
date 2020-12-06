@@ -10,8 +10,3 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Homepage\HomepageController@launch')->name('homepage');
-
-Route::get('randomfile', 'Homepage\HomepageController@getRandomFile')->name('getFile');
-Route::get('uploadfile','Homepage\HomepageController@uploadfileview')->name('upload_background_view');
-Route::post('uploadfile','Homepage\HomepageController@uploadFile')->name('upload_background_post');
