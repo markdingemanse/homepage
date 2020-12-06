@@ -56,4 +56,5 @@ echo "<VirtualHost *:80>
 </VirtualHost>" > /etc/httpd/conf.modules.d/dev.conf
 
 service firewalld stop
+sudo setsebool httpd_can_network_connect_db 1
 service httpd restart
