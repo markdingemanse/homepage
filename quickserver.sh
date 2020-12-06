@@ -1,6 +1,6 @@
 ## /bin/bash
 
-install_mariadb=false;
+install_mariadb=true;
 
 yum update -y
 
@@ -43,7 +43,7 @@ chcon -R -t httpd_sys_rw_content_t /var/www/homepage/storage
 
 cp .env.example .env
 php artisan key:generate
-
+php artisan migrate --no-interaction
 touch /etc/httpd/conf.modules.d/dev.conf
 
 echo "<VirtualHost *:80>
@@ -55,5 +55,5 @@ echo "<VirtualHost *:80>
        </Directory>
 </VirtualHost>" > /etc/httpd/conf.modules.d/dev.conf
 
-firewall-cmd --add-service=http --permanent
+service firewalld stop
 service httpd restart
