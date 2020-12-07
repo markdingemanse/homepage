@@ -105,7 +105,31 @@
                         <a href="https://www.reddit.com/r/symphonicmetal/">R/Symphometal</a> <br />
 
                     </div>
-                </div>
+                </div> <!-- links -->
+                <div id="feeds">
+                    <div class="d2x1" id="todo">
+                        <h1 class="bracket" style="cursor: pointer;" onclick="saveTodo();">Todo</h1>
+                            <form method="post" >
+                                <textarea id="todobox" name="comments">
+                                </textarea>
+                            </form>
+                    </div>
+
+                    <div class="d2x1">
+                        <h1> <a href="http://nu.nl/" class="bracket">NU.nl</a></h1>
+                        <div class="d2x1Child" id="nu"></div>
+                    </div>
+
+                    <div class="d2x1">
+                        <h1><a href="http://nos.nl/" class="bracket">NOS Nieuws</a></h1>
+                        <div class="d2x1Child" id="nos"></div>
+                    </div>
+
+                    <div class="d2x1">
+                        <h1><a href="http://www.tweakers.net/" class="bracket">Tweakers</a></h1>
+                        <div class="d2x1Child" id="tweakers"></div>
+                    </div>
+                </div> <!--feeds-->
 
                 <div id="condfeeds">
                     <div class="d4x2" id="xkcdContainer">
