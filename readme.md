@@ -41,4 +41,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Homepage 
 
-Basicly E66666666/homepage-alt in Laravel. test
+Basicly E66666666/homepage-alt in Laravel. test3
