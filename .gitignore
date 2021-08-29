@@ -9,3 +9,4 @@ Homestead.yaml
 .env
 Makefile
 yarn-error.log
+.phpunit.result.cache
