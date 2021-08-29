@@ -78,7 +78,7 @@ h2 + P {
 
 </style>
 
-<form action="/uploadfile" method="post" id="form" enctype="multipart/form-data">
+<form action="/upload" method="post" id="form" enctype="multipart/form-data">
     @csrf
     <p class="file">
         <input type="file" class="form-control-file" name="file" id="file" aria-describedby="fileHelp">
