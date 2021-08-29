@@ -45,9 +45,9 @@ class HomepageController extends Controller
                 'file' => 'required|file',
             ]);
 
-            $fileName = "bgn".time().'.'.request()->file->getClientOriginalExtension();
+            $fileName = $this->image->buildFileName($request->file->getClientOriginalExtension());
 
-            $request->file('file')->store($fileName);
+            $request->file->storeAs('img', $fileName, 'public');
 
             return redirect()->route('upload_background_view',['waifu' => $submitted]);
         }

@@ -37,8 +37,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('img'),
-            'url' => env('APP_URL').'/img',
+            'root' => public_path(),
+            'url' => env('APP_URL'),
             'visibility' => 'public',
         ],
 
@@ -51,7 +51,6 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-
     ],
 
     /*

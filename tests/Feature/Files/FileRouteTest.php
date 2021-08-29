@@ -2,14 +2,13 @@
 
 namespace Tests\Feature\Files;
 
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use PHPUnit\Framework\Assert;
+use MarkDingemanse\Beyondlove\Services\Image;
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 
-class HomepageTest extends TestCase
+class FileRouteTest extends TestCase
 {
     public function testGetRandomFile()
     {
@@ -33,13 +32,14 @@ class HomepageTest extends TestCase
 
     public function testUpload()
     {
-//        Storage::fake('public');
+        Storage::fake('public');
+        $image = new Image();
 
         $response = $this->json('POST', '/upload?waifu=password', [
-            'file' =>  $file = UploadedFile::fake()->create(Str::random() . '.jpg')
+            'file' => UploadedFile::fake()->create(Str::random() . '.jpg')
         ]);
 
         $response->assertStatus(302);
-        Storage::disk('public')->assertExists('img/' . $file->getFilename(). '.jpg');
+        Storage::disk('public')->assertExists('img/' . $image->buildFileName('jpg'));
     }
 }
